@@ -1,0 +1,61 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.95" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#gameGradient)"/>
+  
+  <!-- Target Icon -->
+  <g transform="translate(300, 120)">
+    <circle cx="0" cy="0" r="60" fill="#ffffff" opacity="0.2"/>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="60" text-anchor="middle" fill="#ffffff">🎯</text>
+  </g>
+  
+  <!-- Tic-Tac-Toe Board -->
+  <g transform="translate(300, 320)">
+    <!-- Board Background -->
+    <rect x="-90" y="-90" width="180" height="180" rx="20" fill="url(#boardGradient)" opacity="0.9"/>
+    
+    <!-- Grid Lines -->
+    <line x1="-30" y1="-90" x2="-30" y2="90" stroke="#667eea" stroke-width="4" opacity="0.7"/>
+    <line x1="30" y1="-90" x2="30" y2="90" stroke="#667eea" stroke-width="4" opacity="0.7"/>
+    <line x1="-90" y1="-30" x2="90" y2="-30" stroke="#667eea" stroke-width="4" opacity="0.7"/>
+    <line x1="-90" y1="30" x2="90" y2="30" stroke="#667eea" stroke-width="4" opacity="0.7"/>
+    
+    <!-- X's and O's -->
+    <text x="-60" y="-45" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#ff6b6b" font-weight="bold">X</text>
+    <text x="0" y="-45" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#4ecdc4" font-weight="bold">O</text>
+    <text x="60" y="-45" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#ff6b6b" font-weight="bold">X</text>
+    
+    <text x="-60" y="15" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#4ecdc4" font-weight="bold">O</text>
+    <text x="60" y="15" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#ff6b6b" font-weight="bold">X</text>
+    
+    <text x="0" y="75" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" fill="#4ecdc4" font-weight="bold">O</text>
+    
+    <!-- Winning Line -->
+    <line x1="-60" y1="-60" x2="60" y2="60" stroke="#ffd700" stroke-width="6" opacity="0.8" stroke-linecap="round">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Score Display -->
+  <g transform="translate(300, 460)">
+    <rect x="-120" y="-25" width="240" height="50" rx="25" fill="#ffffff" opacity="0.9"/>
+    <text x="-60" y="-5" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ff6b6b" font-weight="bold">Player X: 3</text>
+    <text x="0" y="-5" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#666">|</text>
+    <text x="60" y="-5" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#4ecdc4" font-weight="bold">Player O: 2</text>
+    <text x="0" y="12" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#667eea">Player X Wins!</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="550" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff" font-weight="bold">Tic-Tac-Toe</text>
+</svg>

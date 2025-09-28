@@ -1,0 +1,88 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="loginGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="formGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.95" />
+    </linearGradient>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e3f2fd;stop-opacity:0.9" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#loginGradient)"/>
+  
+  <!-- Security Shield Background -->
+  <g transform="translate(300, 300)">
+    <circle cx="0" cy="0" r="180" fill="#ffffff" opacity="0.1"/>
+    <circle cx="0" cy="0" r="140" fill="#ffffff" opacity="0.15"/>
+    <circle cx="0" cy="0" r="100" fill="#ffffff" opacity="0.2"/>
+  </g>
+  
+  <!-- Large Lock Icon -->
+  <g transform="translate(300, 180)">
+    <circle cx="0" cy="0" r="80" fill="#ffffff" opacity="0.25"/>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="90" text-anchor="middle" fill="#ffffff">🔐</text>
+  </g>
+  
+  <!-- Login Form Container -->
+  <g transform="translate(300, 340)">
+    <rect x="-140" y="-90" width="280" height="180" rx="25" fill="url(#formGradient)" opacity="0.95" filter="url(#glow)"/>
+    
+    <!-- Form Header -->
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#4facfe" font-weight="bold">Secure Access Portal</text>
+    
+    <!-- Username Field -->
+    <rect x="-120" y="-35" width="240" height="35" rx="17" fill="#f8f9fa" stroke="#4facfe" stroke-width="2" opacity="0.9"/>
+    <text x="-110" y="-40" font-family="Arial, sans-serif" font-size="12" fill="#4facfe" font-weight="bold">👤 Username</text>
+    <text x="-110" y="-15" font-family="Courier New, monospace" font-size="16" fill="#333">klebcahubli</text>
+    
+    <!-- Password Field -->
+    <rect x="-120" y="10" width="240" height="35" rx="17" fill="#f8f9fa" stroke="#4facfe" stroke-width="2" opacity="0.9"/>
+    <text x="-110" y="5" font-family="Arial, sans-serif" font-size="12" fill="#4facfe" font-weight="bold">🔑 Password</text>
+    <text x="-110" y="30" font-family="Courier New, monospace" font-size="16" fill="#333">••••••••</text>
+    
+    <!-- Login Button -->
+    <rect x="-100" y="55" width="200" height="40" rx="20" fill="url(#loginGradient)" filter="url(#glow)"/>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff" font-weight="bold">🚀 LOGIN</text>
+  </g>
+  
+  <!-- Security Features -->
+  <g transform="translate(150, 480)">
+    <rect x="-60" y="-15" width="120" height="30" rx="15" fill="url(#shieldGradient)"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4facfe" font-weight="bold">🛡️ Encrypted</text>
+  </g>
+  
+  <g transform="translate(300, 480)">
+    <rect x="-60" y="-15" width="120" height="30" rx="15" fill="url(#shieldGradient)"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4facfe" font-weight="bold">🔒 Secure</text>
+  </g>
+  
+  <g transform="translate(450, 480)">
+    <rect x="-60" y="-15" width="120" height="30" rx="15" fill="url(#shieldGradient)"/>
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4facfe" font-weight="bold">✓ Verified</text>
+  </g>
+  
+  <!-- Animated Security Pulse -->
+  <g transform="translate(300, 300)">
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3">
+      <animate attributeName="r" values="200;220;200" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="550" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#ffffff" font-weight="bold">Secure Login Portal</text>
+</svg>
