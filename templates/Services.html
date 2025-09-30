@@ -15,6 +15,11 @@
       <a href="/" class="logo">
         <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="170" height="40" alt="Pfolio home">
       </a>
+
+      <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+      </button>
       
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
@@ -26,6 +31,8 @@
           <li><a href="Services.html" class="navbar-link active">Services</a></li>
         </ul>
       </nav>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
       
     </div>
   </header>
@@ -112,7 +119,7 @@
       </div>
       
       <div class="footer-content">
-        <p class="section-text">📧 appleamruthbadi@klebcahubli.in | 📞 +91 9480939288</p>
+        <p class="section-text">📧 appleamruthbadi@klebcahubli.in | <br> 📞 +91 9480939288 </p>
       </div>
       
       <!-- Copyright -->

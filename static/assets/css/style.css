@@ -759,22 +759,11 @@ body.nav-active { overflow: hidden; }
 }
 
 
-@media (min-width: 992px) {
-
-  :root {
-
-    --fs-3: 7rem;
-
-  }
-
-  .container { max-width: 960px; }
-
-  .title-wrapper { gap: 15%; }
+@media (min-width: 768px) {
 
   .slider { --slider-items: 3; }
 
-  .hero-subtitle { --fs-8: 1.4rem; }
-
+  .hero-banner { max-width: 550px; }
   .skills .section-title { max-width: 16ch; }
 
   .skills-wrapper { gap: 10%; }
@@ -787,6 +776,16 @@ body.nav-active { overflow: hidden; }
   .blog-card .card-content { padding: 32px; }
 
   .blog-list li:nth-child(2n) .card-banner { order: 1; }
+  
+  /* Compact navbar for tablets */
+  .navbar-list {
+    gap: 20px;
+  }
+  
+  .navbar-link {
+    font-size: var(--fs-8);
+    padding: 6px 10px;
+  }
 
 }
 
@@ -803,6 +802,17 @@ body.nav-active { overflow: hidden; }
     top: 0;
     display: grid;
     place-content: center;
+    width: auto;
+    max-width: 600px;
+  }
+  
+  .navbar-list {
+    gap: 25px;
+  }
+  
+  .navbar-link {
+    font-size: var(--fs-7);
+    padding: 8px 12px;
   }
 
   .nav-toggle-btn {
