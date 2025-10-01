@@ -7,7 +7,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
 
 ### 🚀 Live Website
-[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?logo=netlify&logoColor=white&style=for-the-badge)](https://your-portfolio-url.netlify.app)
+[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?logo=netlify&logoColor=white&style=for-the-badge)](https://badis-portfolio.netlify.app/)
 
 ## 📋 About
 
