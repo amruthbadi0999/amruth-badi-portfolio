@@ -14,6 +14,11 @@ def home():
     """Serve the homepage"""
     return render_template('index.html')
 
+@app.route('/test')
+def test():
+    """Test route to verify function is working"""
+    return "Flask serverless function is working!"
+
 @app.route('/Contact.html')
 def contact():
     """Serve the contact page"""
@@ -111,6 +116,10 @@ def internal_error(error):
 
 # Netlify serverless function handler
 def handler(event, context):
+    return serverless_wsgi.handle_request(app, event, context)
+
+# Alternative handler name for Netlify
+def main(event, context):
     return serverless_wsgi.handle_request(app, event, context)
 
 if __name__ == '__main__':
