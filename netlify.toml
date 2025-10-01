@@ -3,9 +3,6 @@
   functions = "netlify/functions"
   publish = "."
 
-[build.environment]
-  PYTHON_VERSION = "3.11"
-
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/app"
