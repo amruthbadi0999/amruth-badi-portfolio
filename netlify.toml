@@ -1,13 +1,17 @@
 [build]
-  command = "pip install -r requirements.txt"
+  command = "cp templates/* . && pip install -r requirements.txt"
   functions = "netlify/functions"
   publish = "."
 
 [[redirects]]
-  from = "/*"
+  from = "/submit-form"
   to = "/.netlify/functions/app"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/.netlify/functions/app"
+  status = 200
 
 [functions]
   directory = "netlify/functions"
