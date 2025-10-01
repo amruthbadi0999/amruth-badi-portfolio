@@ -1,0 +1,6 @@
+# Netlify redirects file
+# Handle form submissions
+/thank-you.html /thank-you.html 200
+
+# Handle root redirects
+/ /index.html 200
