@@ -16,9 +16,9 @@ git push origin main
    - Click "New site from Git"
    - Connect your GitHub repository
    - Configure build settings:
-     - Build command: `pip install -r requirements.txt && python app.py`
+     - Build command: `pip install -r requirements.txt`
      - Publish directory: `/`
-     - Python version: 3.8+
+     - Functions directory: `netlify/functions`
 
 3. **Deploy automatically** - Every push triggers deployment
 
