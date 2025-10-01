@@ -38,7 +38,7 @@
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
           <li>
-            <a href="/" class="navbar-link">Home</a>
+            <a href="/" class="navbar-link active">Home</a>
           </li>
           <li>
             <a href="#about" class="navbar-link">About</a>
@@ -365,21 +365,18 @@
           <ul class="slider-container" data-slider-container>
 
             <li class="slider-item">
-              <div class="portfolio-card img-holder" style="width: 600; height: 600;">
+              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="{{ url_for('static', filename='assets/images/login-cover.svg') }}" width="600" height="600" loading="lazy" alt="portfolio" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/login-cover.svg') }}" width="600" height="600" loading="lazy" alt="Secure Login Portal" class="img-cover">
 
 
                 <div class="card-content">
-                  <h3 class="h3 card-title">Login Page</h3>
+                  <h3 class="h3 card-title">🔐 Secure Login</h3>
 
-                  <p class="card-text">Website</p>
+                  <p class="card-text">Enhanced Login Portal</p>
                 </div>
 
-                <a href="loginJS.html" class="layer-link"></a>
-
-
-
+                <a href="/login" class="layer-link"></a>
 
               </div>
             </li>
@@ -435,22 +432,6 @@
               </div>
             </li>
 
-            <li class="slider-item">
-              <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
-
-                <img src="{{ url_for('static', filename='assets/images/login-cover.svg') }}" width="600" height="600" loading="lazy" alt="Secure Login Portal" class="img-cover">
-
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">🔐 Secure Login</h3>
-
-                  <p class="card-text">Enhanced Login Portal</p>
-                </div>
-
-                <a href="/login" class="layer-link"></a>
-
-              </div>
-            </li>
 
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
@@ -646,10 +627,13 @@
             <a href="https://maps.app.goo.gl/H4UU3Bua9Bdpvx546" class="footer-link">KLE BCA — Hubli</a>
           </li>
         </ul>
+      </div>
 
+      <!-- Social Media Icons - Horizontal Layout -->
+      <div class="social-section">
         <ul class="social-list">
           <li>
-            <a href="https://www.instagram.com/amruth.badii_10?igsh=MWI1anU3YnF1OGxjZA%3D%3D&utm_source=qr" class="social-link">
+            <a href="https://www.instagram.com/amruth.badii_10/" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -659,7 +643,7 @@
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/share/JXYZc9LJArRpp26w/?mibextid=QwDbR1" class="social-link">
+            <a href="https://www.facebook.com/amrut.n.badi" class="social-link">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>

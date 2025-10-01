@@ -21,65 +21,43 @@
       margin: auto;
     }
 
+    /* Use main header styles from style.css - only override specific properties */
     .header {
-      position: fixed;
-      top: 0;
-      width: 100%;
       background-color: #111111;
-      padding: 10px 0;
-      z-index: 1000;
       border-bottom: 1px solid #444;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
     }
 
     .logo img {
       display: block;
     }
 
-    .navbar-list {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    /* Resume page specific navbar styling */
 
-    .navbar-link {
-      color: #a4a4a4;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      position: relative;
-    }
+    /* Ensure mobile menu works properly */
+    @media (max-width: 768px) {
+      .navbar {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--eerie-black);
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: 0.25s var(--cubic-ease-out);
+      }
 
-    .navbar-link:hover,
-    .navbar-link.active {
-      color: #ffffff;
-    }
+      .navbar.active {
+        max-height: 320px;
+        visibility: visible;
+        transition-duration: 0.5s;
+      }
 
-    .navbar-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-      transition: width 0.3s ease;
-    }
-
-    .navbar-link:hover::after,
-    .navbar-link.active::after {
-      width: 100%;
+      .navbar-list {
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+      }
     }
 
     main {
@@ -229,11 +207,11 @@
       <!-- Contact -->
       <div class="resume-block" style="--delay: 0.2s;">
         <h2 class="resume-subtitle">Contact Information</h2>
-        <p class="resume-text">📧 Email: amruthbadidj12@gmail.com</p>
-        <p class="resume-text">📞 Phone: +91 9480939288</p>
+        <p class="resume-text">📧 Email: <a href="mailto:appleamruthbadi@gmail.com">appleamruthbadi@gmail.com</a></p>
+        <p class="resume-text">📞 Phone: <a href="tel:+919480939288">+91 9480939288</a></p>
         <p class="resume-text">📍 Location: Dharwad, Karnataka, India</p>
         <p class="resume-text">🎓 Course: Bachelor of Computer Applications (BCA)</p>
-        <p class="resume-text">🌐 LinkedIn: <a href="https://www.linkedin.com/in/amruth-badi-dj-b9bb8b2b8/" target="_blank">linkedin.com/in/amruth-badi-dj</a></p>
+        <p class="resume-text">🌐 LinkedIn: <a href="https://www.linkedin.com/in/amruth-badi/" target="_blank">linkedin.com/in/amruth-badi</a></p>
         <p class="resume-text">🏠 Address: Shivanand Nagar Toll Naka 4th Cross, Dharwad, 580001</p>
       </div>
 

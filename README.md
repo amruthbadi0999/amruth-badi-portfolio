@@ -59,8 +59,8 @@ python3 --version
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/amruthbadi0999/BADI0999.git
+cd BADI0999
 ```
 
 2. **Create a virtual environment:**
@@ -195,60 +195,53 @@ BADI0999/
 
 ## 🚀 Deployment
 
-### **Netlify Deployment (Current)**
+### Netlify Deployment (Recommended)
 
-1. **Connect to GitHub:**
-   - Push your code to GitHub repository
-   - Connect repository to Netlify
-   - Set build command: `pip install -r requirements.txt`
-   - Set publish directory: `/`
+**Prerequisites:**
+- GitHub account
+- Netlify account
 
-2. **Automatic Deployment:**
-   - Every push to main branch triggers auto-deployment
-   - Form submissions work seamlessly
-   - Static assets served efficiently
+**Steps:**
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Deploy to Netlify"
+   git push origin main
+   ```
 
-### **Vercel Deployment (Alternative)**
+2. **Deploy on Netlify:**
+   - Go to [netlify.com](https://netlify.com)
+   - Click "New site from Git"
+   - Connect your GitHub repository: `https://github.com/amruthbadi0999/BADI0999`
+   - Netlify will auto-detect settings from `netlify.toml`
+   - Click "Deploy site"
 
-1. **Install Vercel CLI:**
+3. **Custom Domain (Optional):**
+   - In Netlify dashboard, go to "Domain settings"
+   - Add your custom domain
+   - Configure DNS settings
+
+**Current Live Site:** [https://badis-portfolio.netlify.app/](https://badis-portfolio.netlify.app/)
+
+### Local Development
 ```bash
-npm i -g vercel
-```
-
-2. **Deploy:**
-```bash
-vercel
-```
-
-3. **Follow the prompts** and your site will be live!
-
-### **Local Development**
-
-```bash
-# Clone repository
-git clone <your-repo-url>
+# Clone the repository
+git clone https://github.com/amruthbadi0999/BADI0999.git
 cd BADI0999
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run locally
+# Run locally (for testing)
+cd netlify/functions
 python app.py
 ```
 
-## 🎨 Design Philosophy
-
-- **Dark Theme**: Professional black aesthetic with gradient accents
+For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).heme**: Professional black aesthetic with gradient accents
 - **Minimalism**: Clean, uncluttered design focusing on content
 - **Accessibility**: High contrast ratios and semantic HTML
 - **Performance**: Optimized for fast loading and smooth interactions
 - **Responsiveness**: Seamless experience across all devices
-
-## 📊 Performance Metrics
 
 - **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
 - **Mobile Friendly**: 100% responsive design
@@ -275,20 +268,25 @@ This project is open-source and available under the [MIT License](./LICENSE).
 - 🎓 **Education**: KLE Society's PC Jabin Science College, Dharwad
 - 🏆 **Leadership**: Rotaract Club President (2025-26)
 - 🌍 **Experience**: Inter District Youth Exchange Host
-- 📧 **Email**: amruthbadidj12@gmail.com
+- 📧 **Email**: appleamruthbadi@gmail.com
 - 📱 **Phone**: +91 9480939288
 - 📍 **Location**: Dharwad, Karnataka, India
 
 ### 🔗 Connect with Me
 
-- 📧 [Email](mailto:amruthbadidj12@gmail.com)
+- 📧 [Email](mailto:appleamruthbadi@gmail.com)
 - 📱 [WhatsApp](https://wa.me/919480939288)
-- 📘 [Facebook](https://www.facebook.com/share/JXYZc9LJArRpp26w/?mibextid=QwDbR1)
-- 📸 [Instagram](https://www.instagram.com/amruth.badii_10?igsh=MWI1anU3YnF1OGxjZA%3D%3D&utm_source=qr)
-- 💼 [LinkedIn](https://www.linkedin.com/in/amruth-badi-dj-b9bb8b2b8/)
+- 📘 [Facebook](https://www.facebook.com/amrut.n.badi)
+- 📸 [Instagram](https://www.instagram.com/amruth.badii_10/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/amruth-badi/)
+- 💻 [GitHub](https://github.com/amruthbadi0999)
 
 ---
 
+## 🌐 Live Demo
+
+**🚀 Portfolio Website**: [https://badis-portfolio.netlify.app/](https://badis-portfolio.netlify.app/)
+
 **🚀 Status**: Open to Work Opportunities
 
-Built with 💖 and ☕ by [Amruth Badi](https://github.com/yourusername)
+Built with 💖 and ☕ by [Amruth Badi](https://github.com/amruthbadi0999)
