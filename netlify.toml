@@ -1,7 +1,16 @@
 [build]
-  command = "cp templates/* . && pip install -r requirements.txt"
-  functions = "netlify/functions"
+  command = "echo 'Build complete'"
   publish = "."
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
 
 [[redirects]]
   from = "/submit-form"
