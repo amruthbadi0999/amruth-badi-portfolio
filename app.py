@@ -1,76 +1,121 @@
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
+import os
 
 # Initialize the Flask app
 app = Flask(__name__)
 
-# Route to serve the homepage (index.html)
+# Main routes
 @app.route('/')
 def home():
+    """Serve the homepage"""
     return render_template('index.html')
 
+@app.route('/Contact.html')
+def contact():
+    """Serve the contact page"""
+    return render_template('Contact.html')
 
-# Dynamic route to serve other HTML pages (like Contact.html, Resume.html, etc.)
-@app.route('/<page>')
-def route_page(page):
-    try:
-        return render_template(page)
-    except:
-        return "Page not found", 404
+@app.route('/Resume.html')
+def resume():
+    """Serve the resume page"""
+    return render_template('Resume.html')
 
+@app.route('/Services.html')
+def services():
+    """Serve the services page"""
+    return render_template('Services.html')
 
-# Route to handle form submission from Contact.html
-@app.route('/submit-form', methods=['POST'])
-def submit_form():
-    # Extract data from the form fields using 'name' attributes
-    name = request.form['name']
-    email = request.form['email']
-    phone = request.form.get('phone', '')
-    website = request.form.get('website', '')
-    message = request.form['message']
-
-    # Save the form data into a text file with a timestamp
-    with open('submissions.txt', 'a') as f:
-        f.write(f"\n--- {datetime.now()} ---\n")
-        f.write(f"Name: {name}\n")
-        f.write(f"Email: {email}\n")
-        f.write(f"Phone: {phone}\n")
-        f.write(f"Website: {website}\n")
-        f.write(f"Message: {message}\n")
-    # Redirect to a thank-you route after submission
-    return redirect(url_for('thank_you'))
-
-
-# Route to show a thank-you message after form submission
 @app.route('/thank-you')
 def thank_you():
+    """Show thank-you message after form submission"""
     return render_template('thank-you.html')
 
-
-# Routes for interactive mini-programs
+# Interactive mini-programs routes
 @app.route('/quiz')
 def quiz():
+    """Interactive quiz application"""
     return render_template('quiz.html')
 
 @app.route('/typing-test')
 def typing_test():
+    """Typing speed test application"""
     return render_template('typing-test.html')
 
 @app.route('/tic-tac-toe.html')
 def tic_tac_toe():
+    """Tic-tac-toe game"""
     return render_template('tic-tac-toe.html')
 
 @app.route('/password-generator.html')
 def password_generator():
+    """Password generator tool"""
     return render_template('password-generator.html')
 
 @app.route('/bgcolorchangeJS.html')
 def background_changer():
+    """Background color changer demo"""
     return render_template('bgcolorchangeJS.html')
 
 @app.route('/login')
 def login():
+    """Login system demo"""
     return render_template('loginJS.html')
 
+# Form handling
+@app.route('/submit-form', methods=['POST'])
+def submit_form():
+    """Handle contact form submission"""
+    try:
+        # Extract form data
+        name = request.form.get('name', '')
+        email = request.form.get('email', '')
+        phone = request.form.get('phone', '')
+        website = request.form.get('website', '')
+        message = request.form.get('message', '')
+        
+        # Validate required fields
+        if not name or not email or not message:
+            return "Missing required fields", 400
+        
+        # Save form data with timestamp
+        submission_data = f"""
+--- {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ---
+Name: {name}
+Email: {email}
+Phone: {phone}
+Website: {website}
+Message: {message}
+"""
+        
+        # Ensure submissions file exists and append data
+        with open('submissions.txt', 'a', encoding='utf-8') as f:
+            f.write(submission_data)
+        
+        return redirect(url_for('thank_you'))
+    
+    except Exception as e:
+        return f"Error processing form: {str(e)}", 500
+
+# Error handlers
+@app.errorhandler(404)
+def not_found(error):
+    """Handle 404 errors"""
+    return render_template('index.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    """Handle 500 errors"""
+    return "Internal server error", 500
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Create submissions file if it doesn't exist
+    if not os.path.exists('submissions.txt'):
+        with open('submissions.txt', 'w', encoding='utf-8') as f:
+            f.write("Contact Form Submissions\n" + "="*30 + "\n")
+    
+    # For development with auto-reload (2 processes)
+    app.run(debug=True, host='0.0.0.0', port=8000)
+    
+    # For production mode (1 process) - uncomment line below and comment above
+    # app.run(debug=False, host='0.0.0.0', port=8000)

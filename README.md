@@ -7,7 +7,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
 
 ### 🚀 Live Website
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://your-portfolio-url.vercel.app)
+[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?logo=netlify&logoColor=white&style=for-the-badge)](https://your-portfolio-url.netlify.app)
 
 ## 📋 About
 
@@ -116,7 +116,7 @@ http://127.0.0.1:5000
 - **Ion Icons** - Modern icon library
 
 ### **Deployment**
-- **Vercel** - Serverless deployment platform
+- **Netlify/Vercel** - Serverless deployment platforms
 - **Git** - Version control system
 
 ## 📁 Project Structure
@@ -125,29 +125,32 @@ http://127.0.0.1:5000
 BADI0999/
 ├── app.py                    # Flask application entry point
 ├── requirements.txt          # Python dependencies
+├── vercel.json              # Vercel deployment config
+├── netlify.toml             # Netlify deployment config
+├── _redirects               # Netlify redirects
 ├── README.md                # Project documentation
+├── DEPLOYMENT.md            # Deployment guide
+├── PROJECT_SUMMARY.md       # Project overview
+├── LICENSE                  # MIT license
 ├── submissions.txt          # Form submissions storage
 ├── static/                  # Static assets
 │   ├── assets/
-│   │   ├── css/
-│   │   │   └── style.css   # Main stylesheet (1300+ lines)
-│   │   ├── js/
-│   │   │   └── script.js   # Interactive functionality
-│   │   └── images/         # Image assets and covers
-│   ├── Styless.css        # Contact form specific styles
-│   ├── loginJS.css        # Login page styles
-│   ├── loginJS.js         # Login functionality
-│   └── favicon.svg        # Website favicon
-└── templates/             # HTML templates
-    ├── index.html         # Homepage (main portfolio)
-    ├── Resume.html        # Professional resume page
-    ├── Services.html      # Services and expertise
-    ├── Contact.html       # Contact form page
-    ├── thank-you.html     # Form submission confirmation
-    ├── loginJS.html       # Login system demo
-    ├── quiz.html          # Interactive quiz game
-    ├── typing-test.html   # Typing speed test
-    └── tic-tac-toe.html   # Tic-tac-toe game
+│   │   ├── css/            # Stylesheets
+│   │   ├── js/             # JavaScript files
+│   │   └── images/         # Image assets
+│   └── favicon.svg         # Website favicon
+└── templates/              # HTML templates
+    ├── index.html          # Homepage (main portfolio)
+    ├── Resume.html         # Professional resume page
+    ├── Services.html       # Services and expertise
+    ├── Contact.html        # Contact form page
+    ├── thank-you.html      # Form submission confirmation
+    ├── quiz.html           # Interactive quiz game
+    ├── typing-test.html    # Typing speed test
+    ├── tic-tac-toe.html    # Tic-tac-toe game
+    ├── password-generator.html # Password generator
+    ├── bgcolorchangeJS.html    # Background changer
+    └── loginJS.html        # Login system demo
 ```
 
 ## 🎯 Key Features Implementation
@@ -192,7 +195,20 @@ BADI0999/
 
 ## 🚀 Deployment
 
-### **Vercel Deployment**
+### **Netlify Deployment (Current)**
+
+1. **Connect to GitHub:**
+   - Push your code to GitHub repository
+   - Connect repository to Netlify
+   - Set build command: `pip install -r requirements.txt`
+   - Set publish directory: `/`
+
+2. **Automatic Deployment:**
+   - Every push to main branch triggers auto-deployment
+   - Form submissions work seamlessly
+   - Static assets served efficiently
+
+### **Vercel Deployment (Alternative)**
 
 1. **Install Vercel CLI:**
 ```bash
@@ -206,12 +222,23 @@ vercel
 
 3. **Follow the prompts** and your site will be live!
 
-### **Manual Deployment**
+### **Local Development**
 
-1. **Push to GitHub**
-2. **Connect repository to Vercel**
-3. **Configure build settings**
-4. **Deploy automatically**
+```bash
+# Clone repository
+git clone <your-repo-url>
+cd BADI0999
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run locally
+python app.py
+```
 
 ## 🎨 Design Philosophy
 

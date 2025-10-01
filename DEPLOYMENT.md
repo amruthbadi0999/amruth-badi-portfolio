@@ -1,6 +1,41 @@
 # 🚀 Deployment Guide
 
-## Vercel Deployment (Recommended)
+## Netlify Deployment (Current Setup)
+
+### Method 1: GitHub Integration (Recommended)
+
+1. **Push to GitHub:**
+```bash
+git add .
+git commit -m "Deploy to Netlify"
+git push origin main
+```
+
+2. **Connect to Netlify:**
+   - Go to [netlify.com](https://netlify.com)
+   - Click "New site from Git"
+   - Connect your GitHub repository
+   - Configure build settings:
+     - Build command: `pip install -r requirements.txt && python app.py`
+     - Publish directory: `/`
+     - Python version: 3.8+
+
+3. **Deploy automatically** - Every push triggers deployment
+
+### Method 2: Netlify CLI
+
+1. **Install Netlify CLI:**
+```bash
+npm install -g netlify-cli
+```
+
+2. **Login and deploy:**
+```bash
+netlify login
+netlify deploy --prod
+```
+
+## Vercel Deployment (Alternative)
 
 ### Method 1: Vercel CLI
 
