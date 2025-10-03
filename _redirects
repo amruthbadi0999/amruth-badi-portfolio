@@ -1,3 +1,0 @@
-# Netlify redirects file
-# Redirect all requests to Flask app
-/*    /.netlify/functions/app/:splat  200

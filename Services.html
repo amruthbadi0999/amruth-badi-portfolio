@@ -5,20 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services - Amruth Badi</title>
-  <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="static/assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
 </head>
 
 <body>
   <header class="header" data-header>
     <div class="container">
       <a href="/" class="logo">
-        <img src="static/assets/images/logo.svg" width="170" height="40" alt="Pfolio home">
+        <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="170" height="40" alt="Pfolio home">
       </a>
 
       <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
@@ -143,7 +138,7 @@
     <ion-icon name="chevron-up-outline"></ion-icon>
   </button>
 
-  <script src="static/assets/js/script.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
   
   <script>
     // Back to Top Button

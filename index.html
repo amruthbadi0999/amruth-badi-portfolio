@@ -10,14 +10,10 @@
   <title>Amruth Badi</title>
   <meta name="title" content="Amruth">
   <meta name="description" content="Personal portfolio with mini interactive projects">
-  <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="static/assets/css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
 
 </head>
 
@@ -31,7 +27,7 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="static/assets/images/logo.svg" width="170" height="40" alt="Pfolio home">
+        <img src="{{ url_for('static', filename='assets/images/logo.svg') }}" width="170" height="40" alt="Pfolio home">
       </a>
 
       <button class="nav-toggle-btn" data-nav-toggler data-nav-toggle-btn aria-label="Toggle menu">
@@ -91,7 +87,7 @@
             </p>
 
             <div class="hero-banner">
-              <img src="static/assets/images/a2.jpg"  width="300" height="400" alt="Amruth Badi" class="w-100">
+              <img src="{{ url_for('static', filename='assets/images/a2.jpg') }}"  width="300" height="400" alt="Amruth Badi" class="w-100">
             </div>
 
             <p class="section-text">
@@ -100,7 +96,7 @@
               Seeking opportunities to enhance my expertise and contribute effectively in the tech industry.
             </p>
 
-            <a href="static/assets/images/AmruthResume.pdf" download="AmruthResume.pdf" class="btn has-before">
+            <a href="{{ url_for('static', filename='assets/images/AmruthResume.pdf') }}" download="AmruthResume.pdf" class="btn has-before">
               <span class="span">Download CV</span>
               <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -371,15 +367,16 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/login-cover.svg" width="600" height="600" loading="lazy" alt="Secure Login Portal" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/login-cover.svg') }}" width="600" height="600" loading="lazy" alt="Secure Login Portal" class="img-cover">
 
 
                 <div class="card-content">
                   <h3 class="h3 card-title">🔐 Secure Login</h3>
+
                   <p class="card-text">Enhanced Login Portal</p>
                 </div>
 
-                <a href="projects/login.html" class="layer-link"></a>
+                <a href="/login" class="layer-link"></a>
 
               </div>
             </li>
@@ -387,7 +384,7 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/quiz-cover.svg" width="600" height="600" loading="lazy" alt="Quiz Website" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/quiz-cover.svg') }}" width="600" height="600" loading="lazy" alt="Quiz Website" class="img-cover">
 
 
                 <div class="card-content">
@@ -396,7 +393,7 @@
                   <p class="card-text">Interactive MCQ Quiz with Scoring</p>
                 </div>
 
-                <a href="projects/quiz.html" class="layer-link"></a>
+                <a href="/quiz" class="layer-link"></a>
 
               </div>
             </li>
@@ -404,7 +401,7 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/typing-cover.svg" width="600" height="600" loading="lazy" alt="Typing Speed Test" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/typing-cover.svg') }}" width="600" height="600" loading="lazy" alt="Typing Speed Test" class="img-cover">
 
 
                 <div class="card-content">
@@ -413,7 +410,7 @@
                   <p class="card-text">Test Your WPM & Accuracy</p>
                 </div>
 
-                <a href="projects/typing-test.html" class="layer-link"></a>
+                <a href="/typing-test" class="layer-link"></a>
 
               </div>
             </li>
@@ -421,7 +418,7 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/tictactoe-cover.svg" width="600" height="600" loading="lazy" alt="Tic-Tac-Toe Game" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/tictactoe-cover.svg') }}" width="600" height="600" loading="lazy" alt="Tic-Tac-Toe Game" class="img-cover">
 
 
                 <div class="card-content">
@@ -430,7 +427,7 @@
                   <p class="card-text">Classic 3x3 Grid Game with AI</p>
                 </div>
 
-                <a href="projects/tic-tac-toe.html" class="layer-link"></a>
+                <a href="tic-tac-toe.html" class="layer-link"></a>
 
               </div>
             </li>
@@ -439,7 +436,7 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/password-cover.svg" width="600" height="600" loading="lazy" alt="Password Generator" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/password-cover.svg') }}" width="600" height="600" loading="lazy" alt="Password Generator" class="img-cover">
 
 
                 <div class="card-content">
@@ -448,7 +445,7 @@
                   <p class="card-text">Secure Password Creation Tool</p>
                 </div>
 
-                <a href="projects/password-generator.html" class="layer-link"></a>
+                <a href="/password-generator.html" class="layer-link"></a>
 
               </div>
             </li>
@@ -456,7 +453,7 @@
             <li class="slider-item">
               <div class="portfolio-card img-holder" style="--width: 600; --height: 600;">
 
-                <img src="static/assets/images/bgcolor-cover.svg" width="600" height="600" loading="lazy" alt="Background Color Changer" class="img-cover">
+                <img src="{{ url_for('static', filename='assets/images/bgcolor-cover.svg') }}" width="600" height="600" loading="lazy" alt="Background Color Changer" class="img-cover">
 
 
                 <div class="card-content">
@@ -465,7 +462,7 @@
                   <p class="card-text">Dynamic Color Changing Tool</p>
                 </div>
 
-                <a href="projects/bgcolorchange.html" class="layer-link"></a>
+                <a href="/bgcolorchangeJS.html" class="layer-link"></a>
 
               </div>
             </li>
@@ -677,7 +674,7 @@
     <ion-icon name="chevron-up-outline"></ion-icon>
   </button>
 
-  <script src="static/assets/js/script.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
   
   <!-- Enhanced JavaScript -->
   <script>
