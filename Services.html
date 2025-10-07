@@ -7,6 +7,32 @@
   <title>Services - Amruth Badi</title>
   <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
   <link rel="stylesheet" href="static/assets/css/style.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+  <style>
+    /* Custom Swiper styles */
+    .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--orange-yellow-crayola);
+    }
+    .swiper-pagination-bullet {
+      background: var(--white);
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--orange-yellow-crayola);
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -44,10 +70,10 @@
         Explore the areas where I provide practical solutions and hands-on experience.
       </p>
 
-      <div class="slider" data-slider>
-        <ul class="slider-container service-list" data-slider-container>
-
-          <li class="slider-item" data-slider-item>
+      <div class="swiper services-swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
             <div class="service-card">
               <div class="card-icon">
                 <ion-icon name="code-outline"></ion-icon>
@@ -59,9 +85,10 @@
               <span class="text-lg card-number">01</span>
               <a href="https://developer.mozilla.org/en-US/docs/Learn" class="layer-link" aria-label="Learn more about Web Development"></a>
             </div>
-          </li>
+          </div>
 
-          <li class="slider-item" data-slider-item>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
             <div class="service-card">
               <div class="card-icon">
                 <ion-icon name="analytics-outline"></ion-icon>
@@ -71,11 +98,12 @@
                 Performing data analysis and creating reports using Power BI, Data manipulation, AI&ML using Python.
               </p>
               <span class="text-lg card-number">02</span>
-              <a href="https://powerbi.microsoft.com/" class="layer-link"></a>
+              <a href="https://powerbi.microsoft.com/" class="layer-link" aria-label="Learn more about Data Analysis"></a>
             </div>
-          </li>
+          </div>
 
-          <li class="slider-item" data-slider-item>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
             <div class="service-card">
               <div class="card-icon">
                 <ion-icon name="hardware-chip-outline"></ion-icon>
@@ -85,20 +113,17 @@
                 Providing hardware troubleshooting and networking assistance.
               </p>
               <span class="text-lg card-number">03</span>
-              <a href="https://en.wikipedia.org/wiki/Computer_support" class="layer-link"></a>
+              <a href="https://en.wikipedia.org/wiki/Computer_support" class="layer-link" aria-label="Learn more about Tech Support"></a>
             </div>
-          </li>
-
-        </ul>
-
-        <div class="slider-controls">
-          <button class="slider-control prev" data-slider-prev aria-label="Previous">
-            <div class="line"></div><div class="arrow"></div>
-          </button>
-          <button class="slider-control next" data-slider-next aria-label="Next">
-            <div class="line"></div><div class="arrow"></div>
-          </button>
+          </div>
         </div>
+        
+        <!-- Navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
     </section>
   </main>
@@ -138,9 +163,63 @@
     <ion-icon name="chevron-up-outline"></ion-icon>
   </button>
 
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="static/assets/js/script.js"></script>
   
   <script>
+    // Initialize Swiper
+    const swiper = new Swiper('.services-swiper', {
+      // Optional parameters
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // Pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 2,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 3,
+        }
+      },
+      // Enable touch and mouse drag
+      grabCursor: true,
+      // Keyboard control
+      keyboard: {
+        enabled: true,
+      },
+      // Mousewheel control
+      mousewheel: {
+        forceToAxis: true,
+      },
+      // Accessibility
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+        firstSlideMessage: 'This is the first slide',
+        lastSlideMessage: 'This is the last slide',
+      }
+    });
+  
+    // Back to Top Button
     // Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
     
