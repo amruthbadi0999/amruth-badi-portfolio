@@ -565,11 +565,15 @@ body.nav-active { overflow: hidden; }
 }
 
 .service-card .card-title {
-  color: var(--content-color, var(--raisin-black));
+  color: #fff; /* Changed to white for better visibility */
   margin-block: 20px;
+  transition: color 0.3s ease;
 }
 
-.service-card .card-text { color: var(--content-color); }
+.service-card .card-text { 
+  color: #f0f0f0; /* Lighter gray for better readability */
+  transition: color 0.3s ease;
+}
 
 .service-card .card-number {
   margin-inline-start: auto;
@@ -585,6 +589,16 @@ body.nav-active { overflow: hidden; }
 .service-card:is(:hover, :focus-within) {
   background-color: var(--raisin-black);
   --content-color: var(--white);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:is(:hover, :focus-within) .card-title {
+  color: #6ba8ff; /* Sky blue on hover */
+}
+
+.service-card:is(:hover, :focus-within) .card-text {
+  color: #fff; /* Brighter white on hover */
 }
 
 .skills .section-text { margin-block-end: 20px; }
