@@ -6,13 +6,12 @@
   <title>Contact - Amruth Badi</title>
   <link rel="icon" type="image/svg+xml" href="static/favicon.svg">
   <link rel="stylesheet" href="static/assets/css/style.css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='Styless.css') }}">
 </head>
 <body>
   <!-- Header -->
   <header class="header" data-header>
     <div class="container">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <img src="static/assets/images/logo.svg" width="170" height="40" alt="Pfolio home">
       </a>
 
@@ -23,7 +22,7 @@
       
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
-          <li><a href="/" class="navbar-link">Home</a></li>
+          <li><a href="index.html" class="navbar-link">Home</a></li>
           <li><a href="/#about" class="navbar-link">About</a></li>
           <li><a href="/#portfolio" class="navbar-link">Projects</a></li>
           <li><a href="Contact.html" class="navbar-link active">Contact</a></li>
@@ -87,20 +86,17 @@
                 <ion-icon name="construct-outline"></ion-icon>
               </div>
               <div class="contact-details">
-                <h3>Additional Services</h3>
                 <p>Computer Repair & Technical Support</p>
               </div>
             </div>
           </div>
           
-          <form id="contact" name="contact" method="POST" netlify action="/thank-you.html" class="contact-form">
-            <input type="hidden" name="form-name" value="contact" />
+          <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); validateForm();" name="contact" action="/thank-you.html" method="POST" netlify>
             <h3 class="form-title">📧 Send me a message</h3>
             
             <div class="form-group">
               <input name="name" placeholder="Your Name" type="text" required class="form-input">
             </div>
-            
             <div class="form-group">
               <input name="email" placeholder="Your Email" type="email" required class="form-input">
             </div>
@@ -181,49 +177,80 @@
     <ion-icon name="chevron-up-outline"></ion-icon>
   </button>
   
-  <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+  <!-- Main JavaScript file -->
+  <script src="static/assets/js/script.js"></script>
   
   <script>
-    // Back to Top Button
-    const backToTopBtn = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Back to Top Button
+      const backToTopBtn = document.getElementById('backToTop');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Contact form animation
+      const contactItems = document.querySelectorAll('.contact-info-item');
+      const form = document.getElementById('contact-form');
+      
+      // Animate contact items if they exist
+      if (contactItems.length > 0) {
+        contactItems.forEach((item, index) => {
+          if (item) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+              item.style.transition = 'all 0.8s ease';
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, 200 + (index * 100));
+          }
+        });
+      }
+      
+      // Animate form if it exists
+      if (form) {
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(30px)';
+        setTimeout(() => {
+          form.style.transition = 'all 0.8s ease';
+          form.style.opacity = '1';
+          form.style.transform = 'translateY(0)';
+        }, 500);
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(form);
+          const formObject = {};
+          formData.forEach((value, key) => {
+            formObject[key] = value;
+          });
+          
+          // Store form data in sessionStorage to access on thank-you page
+          sessionStorage.setItem('formData', JSON.stringify(formObject));
+          
+          // Redirect to thank-you page
+          window.location.href = 'thank-you.html';
+        });
       }
     });
-    
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    
-    // Form and contact items animation
-    const contactItems = document.querySelectorAll('.contact-item');
-    const form = document.getElementById('contact');
-    
-    // Animate contact items
-    contactItems.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(30px)';
-      setTimeout(() => {
-        item.style.transition = 'all 0.8s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, 200 + (index * 100));
-    });
-    
-    // Animate form
-    form.style.opacity = '0';
-    form.style.transform = 'translateY(30px)';
-    setTimeout(() => {
-      form.style.transition = 'all 0.8s ease';
-      form.style.opacity = '1';
-      form.style.transform = 'translateY(0)';
-    }, 500);
   </script>
   
+  <!-- Icons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

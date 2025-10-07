@@ -11,24 +11,39 @@ const addEventOnElements = function (elements, eventType, callback) {
 const preloader = document.querySelector("[data-preloader]");
 
 window.addEventListener("DOMContentLoaded", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
+  if (preloader) {
+    preloader.classList.add("loaded");
+  }
+  if (document.body) {
+    document.body.classList.add("loaded");
+  }
 });
 
 
-const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
-const navbar = document.querySelector("[data-navbar]");
-const overlay = document.querySelector("[data-overlay]");
+// Initialize navbar toggling
+function initNavbar() {
+  const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+  const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
+  const navbar = document.querySelector("[data-navbar]");
+  const overlay = document.querySelector("[data-overlay]");
 
-const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  navToggleBtn.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
+  if (!navTogglers.length || !navToggleBtn || !navbar || !overlay) return;
+
+  const toggleNavbar = function () {
+    navbar.classList.toggle("active");
+    navToggleBtn.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("nav-active");
+  }
+
+  // Add event listeners to all togglers
+  navTogglers.forEach(toggler => {
+    toggler.addEventListener("click", toggleNavbar);
+  });
 }
 
-addEventOnElements(navTogglers, "click", toggleNavbar);
+// Initialize navbar when DOM is loaded
+document.addEventListener('DOMContentLoaded', initNavbar);
 
 
 const header = document.querySelector("[data-header]");
