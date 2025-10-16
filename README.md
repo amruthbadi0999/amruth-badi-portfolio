@@ -145,43 +145,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Built with ❤️ by [Amruth Badi](https://github.com/amruthbadi0999)
 
-**Steps:**
-1. **Push to GitHub:**
-   ```bash
-   git add .
-   git commit -m "Deploy to Netlify"
-   git push origin main
-   ```
+## 🚀 Deployment
 
-2. **Deploy on Netlify:**
-   - Go to [netlify.com](https://netlify.com)
-   - Click "New site from Git"
-   - Connect your GitHub repository: `https://github.com/amruthbadi0999/BADI0999`
-   - Netlify will auto-detect settings from `netlify.toml`
-   - Click "Deploy site"
+This project is deployed on Vercel for automatic deployments from the `main` branch.
 
-3. **Custom Domain (Optional):**
-   - In Netlify dashboard, go to "Domain settings"
-   - Add your custom domain
-   - Configure DNS settings
+### Deployment Process
+1. Push changes to the `main` branch
+2. Vercel automatically detects changes and deploys
+3. Site updates within seconds
 
-**Current Live Site:** [https://badis-portfolio.netlify.app/](https://badis-portfolio.netlify.app/)
-
-### Local Development
-```bash
-# Clone the repository
-git clone https://github.com/amruthbadi0999/BADI0999.git
-cd BADI0999
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run locally (for testing)
-cd netlify/functions
-python app.py
-```
-
-For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).heme**: Professional black aesthetic with gradient accents
+### Custom Domain
+To set up a custom domain:
+1. Go to Vercel dashboard
+2. Select your project
+3. Navigate to Settings > Domains
+4. Add your custom domain and follow the verification stepsheme**: Professional black aesthetic with gradient accents
 - **Minimalism**: Clean, uncluttered design focusing on content
 - **Accessibility**: High contrast ratios and semantic HTML
 - **Performance**: Optimized for fast loading and smooth interactions
@@ -229,7 +207,7 @@ This project is open-source and available under the [MIT License](./LICENSE).
 
 ## 🌐 Live Demo
 
-**🚀 Portfolio Website**: [https://badis-portfolio.netlify.app/](https://badis-portfolio.netlify.app/)
+**🚀 Portfolio Website**: [https://amruth-badi-portfolio.vercel.app/](https://amruth-badi-portfolio.vercel.app/)
 
 **🚀 Status**: Open to Work Opportunities
 
